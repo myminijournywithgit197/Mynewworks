@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Festival Gallery</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 { color: #333; }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Festival Card Styling */
+        .festival-card {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .festival-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover Info Overlay */
+        .info-overlay {
+            position: absolute;
+            bottom: -100%; /* Shuruat mein chupa hua */
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: bottom 0.4s ease;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Hover Effect */
+        .festival-card:hover .info-overlay {
+            bottom: 0; /* Hover karne par upar aayega */
+        }
+
+        .festival-card:hover img {
+            transform: scale(1.1); /* Image thodi zoom hogi */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Indian Festivals</h1>
+    <hr style="width: 50%; margin: auto;">
+
+    <section class="gallery-container">
+        <!-- Card 1 -->
+        <div class="festival-card">
+            <img src="diwali.jpg" alt="Diwali">
+            <div class="info-overlay">
+                <h3>Diwali</h3>
+                <p>The Festival of Lights</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="festival-card">
+            <img src="holi.jpg" alt="Holi">
+            <div class="info-overlay">
+                <h3>Holi</h3>
+                <p>The Festival of Colors, celebrating spring and joy.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="festival-card">
+            <img src="durga.jpg" alt="Navratri">
+            <div class="info-overlay">
+                <h3>Navratri</h3>
+                <p>Nine Nights Festival of Goddess Durga</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="festival-card">
+            <img src="ganesh.jpg" alt="Ganesh Chaturthi">
+            <div class="info-overlay">
+                <h3>Ganesh Chaturthi</h3>
+                <p>Celebrating the birth of Lord Ganesha</p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="festival-card">
+            <img src="rakhi1.jpg" alt="Raksha Bandhan">
+            <div class="info-overlay">
+                <h3>Raksha Bandhan</h3>
+                <p>The Sacred Bond of Siblings</p>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="festival-card">
+            <img src="dash.jpg" alt="Dussehra">
+            <div class="info-overlay">
+                <h3>Dussehra</h3>
+                <p>Victory of Good over Evil</p>
+            </div>
+        </div>
+    </section>
+
+<script>
+function showPage(pageId) {
+    let sections = document.querySelectorAll("section");
+    sections.forEach(section => section.classList.remove("active"));
+
+    document.getElementById(pageId).classList.add("active");
+}
+
+function showInfo(img) {
+    img.nextElementSibling.style.display = "block";
+}
+
+function hideInfo(img) {
+    img.nextElementSibling.style.display = "none";
+}
+</script>
+</body>
+</html>
